@@ -51,5 +51,20 @@ function apply() {
   fbtn.forEach(b => b.classList.toggle("on", b.dataset.k === filter));
   cards.forEach(c => c.hidden = !(filter === "ALL" || c.dataset.cat === filter));
 }
+// 事例：写真は主な色の下地から浮かび上がり、カードは画面に入ると順に立ち上がる（隈研吾建築都市設計事務所のサイトを参考）
+document.querySelectorAll("#grid .ph img").forEach(img => {
+  const done = () => img.classList.add("ld");
+  if (img.complete && img.naturalWidth) done(); else img.addEventListener("load", done, { once: true });
+});
+if (!reduce && "IntersectionObserver" in window) {
+  document.documentElement.classList.add("rv");
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const vis = cards.filter(c => !c.hidden && !c.classList.contains("in"));
+    e.target.style.transitionDelay = `${Math.min(vis.indexOf(e.target), 2) * 0.12}s`;
+    e.target.classList.add("in"); io.unobserve(e.target);
+  }), { rootMargin: "0px 0px -8% 0px" });
+  cards.forEach(c => io.observe(c));
+}
 fbtn.forEach(b => b.onclick = () => { filter = b.dataset.k; try { localStorage.setItem("kaiensya-filter", filter); } catch (e) {} apply(); });
 apply();
