@@ -130,6 +130,7 @@ section { padding-block: 96px 0; }
 .links { display: flex; gap: 14px; margin-top: 28px; }
 .links a { width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 50%; display: grid; place-items: center; color: var(--ink); text-decoration: none; transition: border-color .3s, background .3s; }
 .links a:hover, .links a:focus-visible { border-color: var(--ink); }
+.links a.ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); border-color: transparent; color: #fff; }
 .contact dd a { text-decoration: none; border-bottom: 1px solid var(--line); }
 .qual { font-size: 13px; color: var(--ash); line-height: 2; margin: 0; }
 
@@ -203,6 +204,7 @@ body.workpage nav a { color: #a9a7a0; }
 .d-contact { margin-top: 96px; border-top: 1px solid #4a4844; padding-top: 32px; color: #d5d3cc; }
 .d-contact .label { color: #ecebe6; }
 .d-contact .links a { color: #ecebe6; border-color: #5a5853; }
+.d-contact .links a.ig { color: #fff; border-color: transparent; }
 .d-contact a { text-decoration: none; }
 .d-contact .tel { font-family: var(--f-latin); letter-spacing: .12em; font-size: 13px; user-select: all; }
 .work .ph picture, .hero picture { display: contents; }
