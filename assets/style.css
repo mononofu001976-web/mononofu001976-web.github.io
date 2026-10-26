@@ -120,7 +120,7 @@ section { padding-block: 96px 0; }
 
 /* 経歴 */
 .about { display: grid; gap: 36px; align-items: start; }
-.about .ph { aspect-ratio: 4 / 5; overflow: hidden; background: var(--line); }
+.about .ph { aspect-ratio: 820 / 620; overflow: hidden; background: var(--line); }
 .about .ph img { width: 100%; height: 100%; object-fit: cover; }
 .person { font-family: var(--f-mincho); font-size: 24px; letter-spacing: .2em; margin: 0; }
 .person-en { font-family: var(--f-latin); font-size: 13px; letter-spacing: .24em; color: var(--ash); margin: 0 0 28px; }
